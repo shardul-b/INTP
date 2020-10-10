@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div class="nav">
+		<!-- Span for icons -->
+		<span class="eye-icon"></span>
+		<span class="eye-close-icon"></span>
+	</div>
+</body>
+<style>
+	/*Enter this part in every code*/
+	*{
+		box-sizing: border-box;
+	}
+	body{
+		margin:0;
+	}
+	/*Imp code ends*/
+	.nav{
+		width: 100%;
+		padding:10px;
+		display: flex;
+		background-color: blue;
+	}
+	/*Icon code*/
+	.eye-icon{
+		background-image: url('./Assets/Icons/show.svg');
+	    background-size: 1.5em;
+	    background-position: center;
+	    background-repeat: no-repeat;
+	    /*We set a background image, gave it a size, positioned it to center then said don't repeat the image*/
+	    height:1.5em;
+	    width:1.5em;
+	    /*Note background-size cannot be bigger than height and width*/
+	}
+	.eye-close-icon{
+		background: url('./Assets/Icons/hide.svg');
+		background-size: 1.5em;
+	    background-position: center;
+	    background-repeat: no-repeat;
+	    height:1.5em;
+	    width:1.5em;	
+	}
+</style>
+</html>
