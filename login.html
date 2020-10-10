@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up/Sign In</title>
+</head>
+<body>
+    <!-- <header>
+        <div class="container flex-space">
+            <div class="logo-container">
+                <img src="Images/" alt="Logo" class="logo">
+            </div>
+            <nav class="flex-space">
+                <ul class="nav-list nav-list-primary flex-space">
+                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Products</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+                </ul>
+                <ul class="nav-list nav-list-secondary flex-space">
+                    <li class="nav-item"><a href="#" class="nav-link-button">Sign In</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link-button">Sign up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header> -->
+    <div class="background">
+        <div class="login-area hide">
+            <div class="container">
+                <h1 class="signup-head">SIGN IN</h1>
+                <form action="" class="login-form">
+                    <label for="login-email" class="input-label">Email</label>
+                    <input type="email" name="login-email" id="login-email" class="input-box" placeholder='Email' title="Email" required="true">
+                    <span class="error"></span>
+                   
+                    <label for="log-pass" class="input-label">Password</label>
+                    <div class="password-container flex">
+                        <input type="password" name="login-password" id="log-pass" class="input-box" placeholder="Password" title='Password' required="true" oninput='signinVerify()'>
+                        <div class="eye-in flex">
+                            <span class="in-pass-hide hide-eye hide"></span>
+                            <span class="in-pass-show show-eye"></span>
+                        </div>
+                    </div>
+                    <button class="submit-button submit" name='submit' disabled="true">SIGN IN</button>
+                    <button class="new">New to this site?</button>
+                </form>
+            </div>
+        </div>
+        <div class="signup-area">
+            <div class="container">
+                <h1 class="signup-head">SIGN UP</h1>
+                <form action="" class="signup-form">
+                    <label for="fname" class="input-label">First Name</label>
+                    <input type="text" name="firstname" id="fname" class="input-box" placeholder="Firstname" title="Firstname" required="true" oninput='signupverify()'>
+                    <label for="lname" class="input-label">Last Name</label>
+                    <input type="text" name="lastname" id="lname" class="input-box" placeholder="Lastname" title="Lastname" required="true" oninput='signupverify()'>
+                    <label for="new-email" class="input-label">Email</label>
+                    <input type="email" name="signup-username" id="new-email" class="input-box" placeholder='Email' title="Email" required="true" >
+                    <label for="new-pass" class="input-label">Password</label>
+                    <div class="password-container flex">
+                        <input type="password" name="signup-password" id="new-pass" class="input-box" placeholder="Password" title='Password' required="true" oninput='signupverify()'>
+                        <div class="eye-up flex">
+                            <span class="new-pass-hide hide-eye hide"></span>
+                            <span class="new-pass-show show-eye"></span>
+                        </div>
+                    </div>
+                    <label for="re-pass" class="input-label">Re-enter Password</label>
+                    <div class="password-container flex">
+                        <input type="password" name="signupre-password" id="re-pass" class="input-box" placeholder="Re-enter Password" title='Password' required="true" oninput='signupverify()'>
+                        <div class="eye-re flex">
+                            <span class="re-pass-hide hide-eye hide"></span>
+                            <span class="re-pass-show show-eye"></span>
+                        </div>
+                    </div>
+                    <div class="optional-area flex">
+                        <span class="down-icon"></span>
+                        <span class="up-icon hide"></span>
+                        <span class="optional-text">Optional Inputs</span>
+                    </div>
+                    <div class="optional-fields hide">
+                        <label for="phone" class="input-label">Mobile No.</label>
+                        <input type="tel" name="phone" id="phone" class="input-box" placeholder="Mobile No." title="Mobile No.">
+                    </div>
+                    <button class="signup-submit-button submit" name='signup-submit' disabled="true">SIGN UP</button>
+                    <button class="already">Already have an account?</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src='script.js'></script>
+</body>
+</html>

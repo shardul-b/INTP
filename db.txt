@@ -1,0 +1,26 @@
+--Product--
+id
+name
+desc
+seller
+cost
+stock
+category
+
+--User--
+id
+firstname
+lastname
+phone-(can be null)
+email
+login(bool)
+
+--Cart--
+userid(User)
+productId(product)
+cartid
+product_quantity
+cost
+
+//Seller
+//Comments
