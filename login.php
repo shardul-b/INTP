@@ -7,7 +7,10 @@
     <title>Sign Up/Sign In</title>
 </head>
 <body>
-    <!-- <header>
+    <?php
+        require 'PHP/connect.php';
+    ?>
+<!--<header>
         <div class="container flex-space">
             <div class="logo-container">
                 <img src="Images/" alt="Logo" class="logo">

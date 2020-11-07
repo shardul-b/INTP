@@ -126,7 +126,7 @@ button{
 		padding:0.3em;	
 	}
 	.password-container{
-		border:1px solid green;
+		/*border:1px solid green;*/
 	}
 	.password-container .input-box{
 		width: 85%;

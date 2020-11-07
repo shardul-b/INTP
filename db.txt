@@ -2,6 +2,8 @@
 id
 name
 desc
+/=details
+/=image
 seller
 cost
 stock
@@ -13,7 +15,8 @@ firstname
 lastname
 phone-(can be null)
 email
-login(bool)
+password
+image
 
 --Cart--
 userid(User)
