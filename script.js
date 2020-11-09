@@ -26,8 +26,10 @@ const textVerify=(text)=>{
 const signinVerify=()=>{
 	let pass=passwordVerify(ids('log-pass').value);
 	if(pass){
+		classes('login-password-error')[0].classList.add('hide');
 		classes('submit-button')[0].disabled=false;
 	}else{
+		classes('login-password-error')[0].classList.remove('hide');
 		classes('submit-button')[0].disabled=true;
 	}
 }
@@ -36,15 +38,48 @@ const signupverify=()=>{
 	//Verifies Password
 	let originalPass=ids('new-pass').value;
 	let rePass=ids('re-pass').value;
-	let pass=passwordVerify(originalPass) && passwordVerify(rePass);
-	console.log(originalPass,rePass)
+	let password=passwordVerify(originalPass);
+	//Password error generator
+	if(!password && originalPass.length>0){
+		classes('signup-password-error')[0].classList.remove('hide');
+	}else{
+		classes('signup-password-error')[0].classList.add('hide');
+	}
+	let rePassword=passwordVerify(rePass);
+	//Re-enter Password error generator
+	if((!rePassword || (originalPass !== rePass)) && rePass.length>0){
+		classes('signup-repassword-error')[0].classList.remove('hide');
+	}else{
+		classes('signup-repassword-error')[0].classList.add('hide');
+	}
+	let pass= password && rePassword;
+
+	//console.log(originalPass,rePass)
 	//Verifies First Name and Last name  
-	let name=textVerify(ids('fname').value) && textVerify(ids('lname').value); 
+	let first=textVerify(ids('fname').value);
+	//First Name error generator
+	if(!first){
+		classes('signup-fname-error')[0].classList.remove('hide');
+	}else{
+		classes('signup-fname-error')[0].classList.add('hide');
+	}	
+	//Last Name Error generator
+	let last=textVerify(ids('lname').value);
+	if(!last && (ids('lname').value).length>0){
+		classes('signup-lname-error')[0].classList.remove('hide');
+	}else{
+		classes('signup-lname-error')[0].classList.add('hide');
+	}
+	let name= first && last; 
 	if(name && pass){
+		classes('signup-password-error')[0].classList.add('hide');
+		classes('signup-fname-error')[0].classList.add('hide');
+		classes('signup-lname-error')[0].classList.add('hide');
 		if(originalPass === rePass){
-			alert('YO')
 			classes('signup-submit-button')[0].disabled=false;
+			classes('signup-repassword-error')[0].classList.add('hide')
 		}else{
+			//classes('signup-repassword-error')[0].classList.remove('hide');
 			classes('signup-submit-button')[0].disabled=true;
 		}
 	}else{
