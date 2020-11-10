@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    $error='';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,6 +57,10 @@
                     <button class="submit-button submit" name='submit' disabled="true">SIGN IN</button>
                     <button class="new">New to this site?</button>
                 </form>
+                <div style = "font-size:0.9rem; color:#cc0000; margin-top:1em">
+                    <?php echo $error; ?>
+                </div>
+            
             </div>
         </div>
         <div class="signup-area">
@@ -127,10 +135,21 @@
             $result = mysqli_query($connection,$SQL) or die('Invalid query:');
         }
         if(isset($_POST['submit'])){
-            $loginEmail='a';
-            $loginPass='a';
-            $loginSQL="SELECT 'id' FROM USER WHERE Email=". $loginEmail ."AND 'password'=". $loginPass. "";
-
+            $loginEmail=$_POST["login-email"];
+            $loginPass=$_POST["login-password"];
+            $loginSQL="SELECT 'id' FROM USER WHERE 'Email'='$loginEmail'AND 'password'='$loginPass'";
+            $loginresult=mysqli_query($connection,$loginSQL) or die('Invalid query:');
+            $row = mysqli_fetch_array($loginresult,MYSQLI_ASSOC);
+            $count = mysqli_num_rows($loginresult);
+            if($count==1){
+                $_SESSION['loggedin']=true;
+                $_SESSION['userid']=count['id'];
+                header('Location:./index.php');
+            }else{
+                $_SESSION['loggedin']=false;
+                // $_SESSION['userid']=count['id'];
+                $error='Invalid Email or Password';
+            }
         }
     ?>
     
